@@ -2,12 +2,22 @@
 
 This is UncaughtExceptionHandler subclass, you can catch exceptions that you do not handle.
 
-You can initialization in your application : 
+## Getting started
 
-GlobalCrashHelper.getInstance().init(this);
+In your `Application` class:
 
-You can also use other initialization method initialization in application：
+```java
+public class ExampleApplication extends Application {
 
+  @Override public void onCreate() {
+    super.onCreate();
+    GlobalCrashHelper.getInstance().init(this);
+  }
+}
+```
+You can also use other initialization method initialization in your `Application` class：
+
+```java
 public void init(@NonNull Context context, @NonNull String catch_log_path);
 
 public void init(@NonNull Context context, @NonNull String catch_log_path, @NonNull String exception_prompt_info);
@@ -16,3 +26,4 @@ public void init(@NonNull Context context,
                      @NonNull String catch_log_path,
                      @NonNull String exception_prompt_info,
                      @Nullable QuitCallback onExceptionCollectionComplete);
+```
